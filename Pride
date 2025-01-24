@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rectangle Surface Area</title>
+</head>
+<body>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        .result {
+            font-weight: bold;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculate the Surface Area of a Rectangle</h1>
+    <form method="post">
+        <label for="length">Length (in units):</label>
+        <input type="number" id="length" name="length" required step="any">
+        <br><br>
+        <label for="width">Width (in units):</label>
+        <input type="number" id="width" name="width" required step="any">
+        <br><br>
+        <button type="submit">Calculate</button>
+    </form>
+
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $length = $_POST['length'];
+        $width = $_POST['width'];
+        
+
+        if ($length > 0 && $width > 0) {
+            $surfaceArea = $length * $width;
+            echo "<p class='result'>The surface area of the rectangle is: " . $surfaceArea . " square units.</p>";
+        } else {
+            echo "<p class='result'>$Length =$ 123; $width =$3</p>";
+        }
+    }
+    ?>
+</body>
+</html>
